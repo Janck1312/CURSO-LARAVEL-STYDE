@@ -89,7 +89,7 @@ class UserController extends Controller
             $id = $request->id;
             $post = new User();
             $post->deleteRecord($id);
-            $response = ['success' => true, 'message' => 'usuario eliminado con exito'];
+            $response = ['success' => true, 'message' => 'Role eliminado con exito'];
         } catch (\Exception $e) {
             $response = ['success' => false, 'message' => $e->getMessage()];
         }

@@ -44,10 +44,10 @@ Route::delete('/users/{id}', 'App\Http\Controllers\UserController@delete');
 //views
 Route::get('/roles', 'App\Http\Controllers\RoleController@index');
 Route::get('/roles/create', 'App\Http\Controllers\RoleController@createview');
-Route::get('/roles/update', 'App\Http\Controllers\RoleController@updateview');
+Route::get('/roles/update/{id}', 'App\Http\Controllers\RoleController@updateview');
 //actions
-Route::post('/roles', 'App\Http\Controllers\RoleController@store');
-Route::put('/roles/{id}', 'App\Http\Controllers\RoleController@update');
+Route::post('/roles', 'App\Http\Controllers\RoleController@saveOrUpdate');
+Route::put('/roles/{id}', 'App\Http\Controllers\RoleController@saveOrUpdate');
 Route::delete('/roles/{id}', 'App\Http\Controllers\RoleController@delete');
 
 //views
