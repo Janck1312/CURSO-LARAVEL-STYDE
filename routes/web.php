@@ -25,19 +25,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //views
 Route::get('/posts', 'App\Http\Controllers\PostController@index');
 Route::get('/posts/create', 'App\Http\Controllers\PostController@createview');
-Route::get('/posts/update', 'App\Http\Controllers\PostController@updateview');
+Route::get('/posts/update/{id}', 'App\Http\Controllers\PostController@updateview');
 //actions
-Route::post('/posts', 'App\Http\Controllers\PostController@store');
-Route::put('/posts/{id}', 'App\Http\Controllers\PostController@update');
+Route::post('/posts', 'App\Http\Controllers\PostController@storeOrUpdate');
+Route::put('/posts/{id}', 'App\Http\Controllers\PostController@storeOrUpdate');
 Route::delete('/posts/{id}', 'App\Http\Controllers\PostController@delete');
+Route::resource('posts', 'App\Http\Controllers\PostController');
 
 //views
 Route::get('/users', 'App\Http\Controllers\UserController@index');
 Route::get('/users/create', 'App\Http\Controllers\UserController@createview');
-Route::get('/users/update', 'App\Http\Controllers\UserController@updateview');
+Route::get('/users/update/{id}', 'App\Http\Controllers\UserController@updateview');
 //actions
-Route::post('/users', 'App\Http\Controllers\UserController@store');
-Route::put('/users/{id}', 'App\Http\Controllers\UserController@update');
+Route::post('/users', 'App\Http\Controllers\UserController@saveOrUpdate');
+Route::put('/users/{id}', 'App\Http\Controllers\UserController@saveOrUpdate');
 Route::delete('/users/{id}', 'App\Http\Controllers\UserController@delete');
 
 //views
